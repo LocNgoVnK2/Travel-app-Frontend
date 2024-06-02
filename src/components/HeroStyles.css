@@ -1,0 +1,93 @@
+/*
+hero mid side
+*/
+.hero-mid{
+    width: 100%;
+    height: 70vh;
+    position: relative;
+}
+.hero-mid h1{
+  padding: 4rem !important; /*ghi đè lên các lớp trùng*/
+}
+/*Hero side*/
+.hero{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+
+.hero-text h1{
+    font-size: 3rem;
+    font-weight: 800;
+    background: #fff;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: #fff;
+}
+/*
+đoạn CSS bạn đã viết sẽ áp dụng các kiểu cho các phần tử 
+h1 và p nằm trong phần tử có class hero-text
+*/
+
+.hero-text p{
+    font-size: 1.3rem;
+    color: #fff;
+    padding:  0.5rem 0 2rem 0;
+}
+
+.hero-text .show{
+    text-decoration: none;
+    font-size: 1.3rem;
+    background: #fff;
+    padding: 1rem 2rem;
+    /*
+     cho các phần tử có class show bên trong
+      một phần tử có class hero-text.
+    */
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color:#222;
+
+}
+
+.hero-text .hide{
+  display: none;
+
+}
+@media screen and (max-width:555px) {
+    .hero-text h1{
+        padding:  10px 20px;
+    }
+    .hero-text p{
+        font-size: 1.1rem;
+        padding:  0 0 2rem 0;
+    }
+    
+.hero-text .show{
+    font-size: 1rem;
+    padding: 0.6rem 1.1rem;
+    /*
+     cho các phần tử có class show bên trong
+      một phần tử có class hero-text.
+    */
+    border-radius: 6px;
+
+
+
+}
+}

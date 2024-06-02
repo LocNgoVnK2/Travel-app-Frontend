@@ -1,0 +1,144 @@
+.NavbarItems{
+    display: flex; /* display: flex: Kích hoạt layout flexbox. display: flex: Làm cho các mục danh sách (li) xếp ngang.*/
+    justify-content: space-between;
+    background: #fff;
+    align-items: center;
+    padding: 0 30px;
+    box-shadow:  0 5px 15px rgba(0,0,0, .25);
+    width: 95%;
+    height: 80px;
+    border-radius:  13px;
+    position: fixed;    
+    top:20px;
+    left: 2.5%;
+    z-index: 9999;
+/* display flex đưa tất cả về nằm ngang inline*/
+}
+
+.navbar-logo{
+    color: #222;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.nav-menu{
+    display: grid;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 10px;
+    list-style: none;
+    align-items: center;
+/*
+Đưa về grid có dạng hộp 
+trong trường hợp này xếp theo columns thì nó xếm hàng ngang theo các cột
+thay đổi khi reponsive với media đổi thành flex
+*/
+}
+.nav-links{
+    text-decoration: none;
+    color:#222;
+    font-size:1.2rem;
+    font-weight: 600;
+    padding: 0.7rem 1rem;
+    white-space:  nowrap;
+}
+
+.nav-links i{ /* <i> nằm bên trong phần tử có class nav-links.*/
+    padding-right: 10px;
+}
+
+.nav-links:hover{
+    background-color: #01959a;
+    color: #fff;
+    border-radius: 4px;
+    transition: all 0.2s ease-in-out;
+}
+.nav-links-mobile{
+    display: none;
+}
+
+button{
+    padding: 0.5rem;
+    white-space: nowrap;
+    border-radius: 0.3rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out ;
+}
+
+button:hover{
+    background-color: #151516;
+    color: #fff;
+}
+.menu-icons{
+    display: none;
+}
+
+
+/*responsive */
+@media screen and (max-width: 850px){
+    .NavbarItems{
+        z-index: 1;
+
+    }
+    .nav-menu{
+       display: flex; /* khi màn hình khỏ hơn kích thước này chuyển thành cột bằng flex*/
+       flex-direction: column;
+       justify-self: flex-start;
+       background: #fff;
+       width: 100%;
+       height: auto;
+       position: absolute; /* cho phép điều chỉnh vị trí*/
+       top: 0;
+       left: -100%; /*đảm bảo khi opaciti thì không xem được*/
+       opacity: 0;
+       align-items: stretch; /* để cho fit với cái container bao nó*/
+       padding: 80px 0 30px 0; /* trên trái dưới phải*/
+       transition: 0.3s ease-in-out;
+       /*
+    Đưa về grid có dạng hộp 
+    trong trường hợp này xếp theo columns thì nó xếm hàng ngang theo các cột
+    */
+    }
+    .nav-menu.active{ /*select khi className="av-menu active"*/
+        left: 0;
+        opacity: 1;
+        z-index: -1;
+        transition: 0.3s ease-in-out;
+    }
+
+    .nav-links{
+        display: block;
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 2rem 0;
+    }
+    .nav-links:hover{
+        background-color: #01959a;
+        transition: none;
+    }
+    button{
+       display: none;
+    }
+
+    .nav-links-mobile{
+        display: block; /* để ghi đèn thuộc tính none bên trên*/
+        text-align: center;
+        padding: 1.5rem;
+        margin: auto;
+        border-radius: 4px;
+        width: 80%;
+        background: #01959a;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.2rem;
+        font-weight: 700rem;
+    }
+  
+    .menu-icons{
+        display: block;
+        font-size: 1.2rem;
+        color: #222;
+    }
+}
